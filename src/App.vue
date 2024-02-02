@@ -41,7 +41,7 @@ body {
   height: 100%;
   width:calc(100% - pxTvw(16*2));
   height:calc(100% - pxTvw(16*2));;
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   &>.title {
