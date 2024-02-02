@@ -5,14 +5,15 @@ import {resolve} from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/auto-echarts',
+  base: '/component-list',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
     }
   },
   build: {
-    outDir: 'auto-echarts',
+    target:['edge90','chrome90','firefox90','safari15'],
+    outDir: 'component-list',
   },
   css: {
     preprocessorOptions: {
