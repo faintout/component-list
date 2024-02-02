@@ -1,0 +1,51 @@
+html, body{
+  background: #001529 !important;
+  width: 100%!important;
+}
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 6px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  /*外层轨道*/
+  // background: rgba(56, 68, 115, 0.6);
+}
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  background: rgba(144, 147, 153, .3);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  /*滚动条里面小方块*/
+  background: rgba(144, 147, 153, .5);
+}
+
+
+//设置上下内边距距离
+$marginList: 8,16,18,22,24,25,27,32,36;
+@each $marginItem in $marginList {
+  .mb-#{$marginItem} {
+    margin-bottom: pxTvh($marginItem);
+  }
+  .mt-#{$marginItem} {
+    margin-top: pxTvh($marginItem);
+  }
+}
+
+//拥堵等级颜色设置
+$conColorMap: ("red" : #F76560,
+        "orange" : #FBACA3,
+        "yellow" : #FFCF8B,
+        "green" : #6ACEAA,
+    );
+@each $key,
+$val in $conColorMap {
+  .con-level-#{$key} {
+      color:  $val;
+  }
+  .con-level-bg-#{$key} {
+      background:  $val;
+  }
+}
