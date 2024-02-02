@@ -1,7 +1,12 @@
-import { defineConfig } from 'vite'
+import {
+  defineConfig
+} from 'vite'
 import vue from '@vitejs/plugin-vue'
-import {resolve} from 'path'
+import {
+  resolve
+} from 'path'
 
+import {sanitizeFileName } from './build/sanitizeFileName.js'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -12,8 +17,13 @@ export default defineConfig({
     }
   },
   build: {
-    target:['edge90','chrome90','firefox90','safari15'],
+    target: ['edge90', 'chrome90', 'firefox90', 'safari15'],
     outDir: 'component-list',
+    rollupOptions: {
+      output: {
+        sanitizeFileName
+      },
+    }
   },
   css: {
     preprocessorOptions: {
