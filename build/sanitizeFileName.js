@@ -5,7 +5,5 @@ export function sanitizeFileName(name) {
 	const match = DRIVE_LETTER_REGEX.exec(name);
 	const driveLetter = match ? match[0] : '';
 	//修改为空
-	const str =  driveLetter + name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, '');
-	console.log('str',str);
-	return str
+	return driveLetter + name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, '');
 }
